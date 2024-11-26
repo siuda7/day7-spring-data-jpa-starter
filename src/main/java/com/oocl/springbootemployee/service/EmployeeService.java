@@ -7,6 +7,7 @@ import com.oocl.springbootemployee.model.Employee;
 import com.oocl.springbootemployee.model.Gender;
 import com.oocl.springbootemployee.repository.EmployeeInMemoryRepository;
 import java.util.List;
+import java.util.Optional;
 
 import com.oocl.springbootemployee.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
@@ -21,11 +22,11 @@ public class EmployeeService {
     }
 
     public List<Employee> findAll() {
-        return employeeRepository.findAll();
+        return employeeInMemoryRepository.findAll();
     }
 
     public List<Employee> findAll(Gender gender) {
-        return employeeRepository.findAllByGender(gender);
+        return employeeInMemoryRepository.findAllByGender(gender);
     }
 
     public List<Employee> findAll(Integer page, Integer pageSize) {
@@ -33,7 +34,7 @@ public class EmployeeService {
     }
 
     public Employee findById(Integer employeeId) {
-        return employeeInMemoryRepository.findById(employeeId);
+        return employeeRepository.findById(employeeId).orElse(null);
     }
 
     public Employee create(Employee employee) {
@@ -43,7 +44,7 @@ public class EmployeeService {
             throw new EmployeeAgeSalaryNotMatchedException();
 
         employee.setActive(true);
-        return employeeInMemoryRepository.create(employee);
+        return employeeRepository.save(employee);
     }
 
     public Employee update(Integer employeeId , Employee employee) {
