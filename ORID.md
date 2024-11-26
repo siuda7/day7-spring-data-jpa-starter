@@ -1,0 +1,7 @@
+O: I gained a deeper understanding of Spring Data JPA and its integration with MySQL databases. Spring Data JPA streamlines the creation of data access layers by minimizing boilerplate code and offering a repository abstraction over the data store. By using Spring Initializr, I quickly set up a Spring Boot application with Spring Data JPA dependencies. I also practiced creating entity classes, defining repositories, and executing CRUD operations. Additionally, I learned to write unit tests for the data access layer to ensure the accuracy of database interactions.
+
+R: Too much things to learn
+
+I: Having utilized Spring Data JPA for both professional and personal projects, I find it quite familiar and agreeable since it is a common ORM standard used in most Spring projects. Spring Data JPA significantly reduces configuration time through auto-configuration and the use of specific annotations like @Entity, @Repository, and @Query. I also explored the core features and principles of Spring Data JPA, such as the Criteria API and JPQL (Java Persistence Query Language).
+
+D: I plan to become more proficient with Spring Data JPA and its advanced features, including some I rarely use, like custom repository implementations to generate SQL using code and auditing. This will help me broaden my knowledge of the framework and support a wider range of use cases.
