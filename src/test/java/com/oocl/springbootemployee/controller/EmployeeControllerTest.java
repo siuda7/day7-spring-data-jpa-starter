@@ -41,12 +41,12 @@ class EmployeeControllerTest {
 
     @BeforeEach
     void setUp() {
-        employeeRepository.deleteAll();
         givenDataToJpaRepository();
         givenDataToInMemoryRepository();
     }
 
     private void givenDataToJpaRepository() {
+        employeeRepository.deleteAll();
         employeeRepository.save(new Employee(null, "John Smith", 32, Gender.MALE, 5000.0));
         employeeRepository.save(new Employee(null, "Jane Johnson", 28, Gender.FEMALE, 6000.0));
         employeeRepository.save(new Employee(null, "David Williams", 35, Gender.MALE, 5500.0));

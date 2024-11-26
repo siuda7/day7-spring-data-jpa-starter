@@ -22,11 +22,11 @@ public class EmployeeService {
     }
 
     public List<Employee> findAll() {
-        return employeeInMemoryRepository.findAll();
+        return employeeRepository.findAll();
     }
 
     public List<Employee> findAll(Gender gender) {
-        return employeeInMemoryRepository.findAllByGender(gender);
+        return employeeRepository.findAllByGender(gender);
     }
 
     public List<Employee> findAll(Integer page, Integer pageSize) {
@@ -56,6 +56,6 @@ public class EmployeeService {
     }
 
     public void delete(Integer employeeId) {
-        employeeInMemoryRepository.deleteById(employeeId);
+        employeeRepository.deleteById(employeeId);
     }
 }
