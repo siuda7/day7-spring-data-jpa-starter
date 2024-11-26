@@ -11,7 +11,7 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "companyId")
     private List<Employee> employees = new ArrayList<>();
 
@@ -24,11 +24,6 @@ public class Company {
     public Company(Integer id, String name) {
         this.id = id;
         this.name = name;
-    }
-
-    public Company(String name, List<Employee> employees) {
-        this.name = name;
-        this.employees = employees;
     }
 
     public Company() {}
